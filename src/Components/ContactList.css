@@ -1,0 +1,17 @@
+#mainhead{
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.flex{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+
+#addbtn{
+    margin-left: 50px;
+    border-radius: 10px;
+}
