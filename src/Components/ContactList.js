@@ -1,14 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./ContactList.css"
 import AddForm from './AddForm'
+import List from './List'
+import Reducer from './Reducer'
+import { useReducer } from 'react';
 
 function ContactList() {
-    const[add,setAdd] = useState(false)
+    const [add, setAdd] = useState(false)
+    const [value, setValue] = useState("")
+    const [items, dispatch] = useReducer(Reducer, [])
+    const [filter, setFilter] = useState(items)
 
-    function handleAdd(){
+    function handleAdd() {
         console.log("Add Contact")
-        setAdd(!add)
+        setAdd(true)
     }
+
+    function handleChange(e) {
+        setValue(e.target.value)
+        if (e.target.value.length == 0) {
+            setFilter(items)
+        }
+        else {
+            const newItems = items.filter((ele) => {
+                return (
+                    ele.name
+                        .toLowerCase()
+                        .includes(e.target.value.toLowerCase())
+                )
+            })
+            setFilter(newItems)
+        }
+    }
+
+    useEffect(() => {
+        setFilter(items)
+    }, [items])
+
     return (
         <>
             <div>
@@ -20,7 +48,13 @@ function ContactList() {
 
                 </div>
             </div>
-            {add?<AddForm/>:null}
+            {add ? <AddForm add={setAdd} dispatch={dispatch} /> : null}
+
+            <div className='searchdiv'>
+                <input onChange={handleChange} value={value} id='search' placeholder='Search Contacts' type="search" />
+            </div>
+
+            <List filter={filter} />
         </>
     )
 }
