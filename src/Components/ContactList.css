@@ -1,16 +1,16 @@
-#mainhead{
+#mainhead {
     margin: auto;
     text-align: center;
     margin-top: 10px;
 }
 
-.flex{
+.flex {
     display: flex;
     margin: auto;
     justify-content: center;
 }
 
-#error{
+#error {
     color: red;
     font-size: 15px;
     text-align: center;
@@ -18,51 +18,65 @@
 }
 
 
-#addbtn{
+#addbtn {
     margin-left: 50px;
     border-radius: 10px;
 }
 
-.contact{
+.contact {
     width: 50%;
     height: 60px;
     border: 2px solid gray;
     margin: auto;
     margin-top: 20px;
     padding: 5px;
+    box-shadow: 3px 3px 8px grey;
 }
 
-#contactName{
+#contactName {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 0;
 }
 
-.btndiv{
+.btndiv {
     width: 30%;
     margin: auto;
 }
 
-.flex1{
+.flex1 {
     display: flex;
 }
 
-#icon{
-   margin-top: 15px;
-   margin-right: 10px;
+#iconperson {
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
-.searchdiv{
+#icondelete {
+    
+    margin-top: 15px;
+    position: relative;
+    left: 100px;
+    
+}
+
+#icondelete:hover {
+    cursor: pointer;
+    box-shadow: 3px 2px 2px grey;
+}
+
+.searchdiv {
     width: 50%;
     margin: auto;
     justify-items: center;
 }
 
-#search{
+#search {
     width: 100%;
     border-radius: 5px;
     border: 2px solid gray;
     margin-top: 30px;
-    
+
 
 }

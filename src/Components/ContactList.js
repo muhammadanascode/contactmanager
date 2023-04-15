@@ -54,7 +54,7 @@ function ContactList() {
                 <input onChange={handleChange} value={value} id='search' placeholder='Search Contacts' type="search" />
             </div>
 
-            <List filter={filter} />
+            <List dispatch={dispatch} filter={filter} />
         </>
     )
 }
